@@ -1,6 +1,6 @@
 public class PasswordValidator {
 
-    public void validate (String password) {
+    public void validate(String password) {
 
         if (password == null) {
             throw new IllegalArgumentException("Password cannot be null");
