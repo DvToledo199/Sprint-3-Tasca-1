@@ -1,3 +1,5 @@
+package L;
+
 public class Warrior extends Character {
     @Override
     public void attack() {

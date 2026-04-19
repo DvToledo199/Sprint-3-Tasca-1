@@ -1,3 +1,5 @@
+package O;
+
 public class InstrumentPlayer {
     public void play(String instrument) {
         if ("guitar".equals(instrument)) {

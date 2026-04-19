@@ -1,3 +1,5 @@
+package L;
+
 public class Ghost extends Character {
     @Override
     public void attack() {
