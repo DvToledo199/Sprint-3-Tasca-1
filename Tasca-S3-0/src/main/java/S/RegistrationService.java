@@ -1,3 +1,5 @@
+package S;
+
 public class RegistrationService {
 
     private EmailValidator emailValidator;
@@ -29,7 +31,7 @@ public class RegistrationService {
             return;
         }
 
-        System.out.println("✅ User registered successfully!");
+        System.out.println("✅ S.User registered successfully!");
     }
 
 }

@@ -26,7 +26,7 @@ Quan s’aplica DIP correctament:
 Suposem que tens una aplicació que gestiona notificacions i que s’envien sempre per correu electrònic:
 
 ```java
-public class EmailService {
+public class S.EmailService {
     public void enviarEmail(String missatge) {
         System.out.println("Enviant email: " + missatge);
     }
@@ -34,10 +34,10 @@ public class EmailService {
 ```
 ```java
 public class GestorNotificacions {
-    private EmailService serveiEmail;
+    private S.EmailService serveiEmail;
 
     public GestorNotificacions() {
-        this.serveiEmail = new EmailService();
+        this.serveiEmail = new S.EmailService();
     }
 
     public void notificar(String missatge) {
@@ -47,7 +47,7 @@ public class GestorNotificacions {
 ```
 
 🔴 Problema:
-`GestorNotificacions` depèn directament de `EmailService` (una implementació concreta). Si vols afegir altres canals com SMS, WhatsApp o Push, caldria modificar la classe.
+`GestorNotificacions` depèn directament de `S.EmailService` (una implementació concreta). Si vols afegir altres canals com SMS, WhatsApp o Push, caldria modificar la classe.
 
 ⚠️Això viola el principi **OCP** i també el **DIP**.
 
@@ -61,10 +61,10 @@ public interface CanalNotificacio {
 }
 
 ```
-- **2️⃣ Fer que EmailService implementi la interfície:**
+- **2️⃣ Fer que S.EmailService implementi la interfície:**
 
 ```java
-public class EmailService implements CanalNotificacio {
+public class S.EmailService implements CanalNotificacio {
     @Override
     public void enviar(String missatge) {
         System.out.println("Enviant email: " + missatge);
@@ -92,7 +92,7 @@ public class GestorNotificacions {
 ```java
 public class Main {
     public static void main(String[] args) {
-        CanalNotificacio canal = new EmailService(); // o new SmsService(), new PushService()...
+        CanalNotificacio canal = new S.EmailService(); // o new SmsService(), new PushService()...
         GestorNotificacions gestor = new GestorNotificacions(canal);
         gestor.notificar("Hola món!");
     }
