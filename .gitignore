@@ -1,1 +1,13 @@
-.idea
+# IntelliJ
+.idea/
+*.iml
+
+# Maven
+target/
+
+# Compiled files
+*.class
+*.jar
+
+# Other
+out/
