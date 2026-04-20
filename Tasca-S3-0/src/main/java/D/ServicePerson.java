@@ -1,9 +1,14 @@
 package D;
 
 public class ServicePerson {
-    public void savePerson(Person person) {
-        MySQL mysql = new MySQL();
-        mysql.savePerson(person);
+
+    private PersonRepository repository;
+
+    public ServicePerson(PersonRepository repository) {
+        this.repository = repository;
     }
 
+    public void savePerson(Person person) {
+        repository.savePerson(person);
+    }
 }
