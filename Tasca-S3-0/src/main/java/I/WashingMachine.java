@@ -1,6 +1,6 @@
 package I;
 
-public class WashingMachine implements MachineActions {
+public class WashingMachine implements Powerable, Washable {
 
     @Override
     public void turnOn() {
@@ -10,16 +10,6 @@ public class WashingMachine implements MachineActions {
     @Override
     public void turnOff() {
         System.out.println("I.WashingMachine is OFF");
-    }
-
-    @Override
-    public void heat() {
-        System.out.println("Heat operation does not apply to I.WashingMachine.");
-    }
-
-    @Override
-    public void cool() {
-        System.out.println("Cool operation does not apply to I.WashingMachine.");
     }
 
     @Override

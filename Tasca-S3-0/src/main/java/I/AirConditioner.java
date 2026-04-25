@@ -1,6 +1,6 @@
 package I;
 
-public class AirConditioner implements MachineActions {
+public class AirConditioner implements Powerable, TemperatureControl {
 
     @Override
     public void turnOn() {
@@ -21,10 +21,6 @@ public class AirConditioner implements MachineActions {
     public void cool() {
         System.out.println("I.AirConditioner is cooling.");
     }
-
-    @Override
-    public void wash() {
-        System.out.println("Wash operation not supported by I.AirConditioner.");
-    }
 }
+
 
