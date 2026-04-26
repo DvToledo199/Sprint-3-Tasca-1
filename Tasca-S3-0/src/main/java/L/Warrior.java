@@ -1,6 +1,6 @@
 package L;
 
-public class Warrior extends Character {
+public class Warrior extends Character implements Attackable, Damageable {
     @Override
     public void attack() {
         System.out.println("The warrior strikes with a sword.");
